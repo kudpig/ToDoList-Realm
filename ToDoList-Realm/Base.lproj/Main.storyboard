@@ -86,10 +86,10 @@
             </objects>
             <point key="canvasLocation" x="1777" y="80"/>
         </scene>
-        <!--View View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="hUX-vb-XJt">
             <objects>
-                <viewController storyboardIdentifier="view" id="86R-ka-WSS" customClass="ViewViewController" customModule="ToDoList_Realm" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detail" id="86R-ka-WSS" customClass="DetailViewController" customModule="ToDoList_Realm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3Td-9G-Cwi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -8,7 +8,7 @@
 import UIKit
 import RealmSwift
 
-class ViewViewController: UIViewController {
+class DetailViewController: UIViewController {
     
     private let realm = try! Realm()
 
@@ -28,7 +28,7 @@ class ViewViewController: UIViewController {
         super.viewDidLoad()
         
         itemLabel.text = item?.item
-        dateLabel.text = ViewViewController.dateFormatter.string(from: item!.date)
+        dateLabel.text = DetailViewController.dateFormatter.string(from: item!.date)
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .trash,
                                                             target: self,

@@ -66,7 +66,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         // Open the screen where we can see item info and delete
         let item = data[indexPath.row]
         
-        guard let vc = storyboard?.instantiateViewController(identifier: "view") as? ViewViewController else {
+        guard let vc = storyboard?.instantiateViewController(identifier: "detail") as? DetailViewController else {
             return
         }
         

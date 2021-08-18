@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8F98ACA326CBC8AB00A6CCF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F98ACA226CBC8AB00A6CCF0 /* AppDelegate.swift */; };
-		8F98ACA526CBC8AB00A6CCF0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F98ACA426CBC8AB00A6CCF0 /* SceneDelegate.swift */; };
 		8F98ACA726CBC8AB00A6CCF0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F98ACA626CBC8AB00A6CCF0 /* ViewController.swift */; };
 		8F98ACAA26CBC8AB00A6CCF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F98ACA826CBC8AB00A6CCF0 /* Main.storyboard */; };
 		8F98ACAC26CBC8AB00A6CCF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F98ACAB26CBC8AB00A6CCF0 /* Assets.xcassets */; };
@@ -21,7 +20,6 @@
 /* Begin PBXFileReference section */
 		8F98AC9F26CBC8AB00A6CCF0 /* ToDoList-Realm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ToDoList-Realm.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F98ACA226CBC8AB00A6CCF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8F98ACA426CBC8AB00A6CCF0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8F98ACA626CBC8AB00A6CCF0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8F98ACA926CBC8AB00A6CCF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8F98ACAB26CBC8AB00A6CCF0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -63,7 +61,6 @@
 			isa = PBXGroup;
 			children = (
 				8F98ACA226CBC8AB00A6CCF0 /* AppDelegate.swift */,
-				8F98ACA426CBC8AB00A6CCF0 /* SceneDelegate.swift */,
 				8F98ACA626CBC8AB00A6CCF0 /* ViewController.swift */,
 				8F98ACB926CC32C900A6CCF0 /* EntryViewController.swift */,
 				8F98ACBB26CC32F600A6CCF0 /* ViewViewController.swift */,
@@ -155,7 +152,6 @@
 				8F98ACBA26CC32C900A6CCF0 /* EntryViewController.swift in Sources */,
 				8F98ACBC26CC32F600A6CCF0 /* ViewViewController.swift in Sources */,
 				8F98ACA326CBC8AB00A6CCF0 /* AppDelegate.swift in Sources */,
-				8F98ACA526CBC8AB00A6CCF0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

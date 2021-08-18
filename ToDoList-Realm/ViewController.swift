@@ -33,6 +33,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "ToDoList"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
+                                                            target: self,
+                                                            action: #selector(didTapAddButton))
         
         data = realm.objects(ToDoListItem.self).map { $0 }
             
@@ -75,7 +79,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    @IBAction func didTapAddButton() {
+    @objc func didTapAddButton() {
         guard let vc = storyboard?.instantiateViewController(identifier: "entry") as? EntryViewController else {
             return
         }

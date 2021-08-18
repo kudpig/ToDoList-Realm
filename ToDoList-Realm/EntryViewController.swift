@@ -18,28 +18,25 @@ class EntryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         textField.becomeFirstResponder()
         textField.delegate = self
         datePicker.setDate(Date(), animated: true)
-        
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save",
                                                             style: .done,
                                                             target: self,
                                                             action: #selector(didTapSaveButton))
-        
     }
     
     @objc func didTapSaveButton() {
         if let text = textField.text, !text.isEmpty {
             let date = datePicker.date
             
-            realm.beginWrite()
+            realm.beginWrite()  // トランザクションの開始
             let newItem = ToDoListItem()
             newItem.date = date
-            newItem.item = text
+            newItem.title = text
             realm.add(newItem)
-            try! realm.commitWrite()
+            try! realm.commitWrite() // トランザクションの終了
             
             completionHandler?()
             navigationController?.popToRootViewController(animated: true)
@@ -53,10 +50,8 @@ class EntryViewController: UIViewController {
 }
 
 extension EntryViewController: UITextFieldDelegate {
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
-    
 }

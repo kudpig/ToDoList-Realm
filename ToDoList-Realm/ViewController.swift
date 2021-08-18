@@ -20,7 +20,7 @@ import RealmSwift
  */
 
 class ToDoListItem: Object {
-    @objc dynamic var item: String = ""
+    @objc dynamic var title: String = ""
     @objc dynamic var date: Date = Date()
 }
 
@@ -33,6 +33,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "ToDoList"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
+                                                            target: self,
+                                                            action: #selector(didTapAddButton))
         
         data = realm.objects(ToDoListItem.self).map { $0 }
             
@@ -51,7 +55,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = data[indexPath.row].item
+        cell.textLabel?.text = data[indexPath.row].title
         return cell
     }
     
@@ -62,7 +66,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         // Open the screen where we can see item info and delete
         let item = data[indexPath.row]
         
-        guard let vc = storyboard?.instantiateViewController(identifier: "view") as? ViewViewController else {
+        guard let vc = storyboard?.instantiateViewController(identifier: "detail") as? DetailViewController else {
             return
         }
         
@@ -70,12 +74,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         vc.deletionHandler = { [weak self] in
             self?.refresh()
         }
-        vc.title = item.item
+        vc.title = item.title
         vc.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    @IBAction func didTapAddButton() {
+    @objc func didTapAddButton() {
         guard let vc = storyboard?.instantiateViewController(identifier: "entry") as? EntryViewController else {
             return
         }

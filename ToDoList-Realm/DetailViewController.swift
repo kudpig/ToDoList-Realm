@@ -27,7 +27,7 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        itemLabel.text = item?.item
+        itemLabel.text = item?.title
         dateLabel.text = DetailViewController.dateFormatter.string(from: item!.date)
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .trash,

@@ -37,7 +37,7 @@ class EntryViewController: UIViewController {
             realm.beginWrite()
             let newItem = ToDoListItem()
             newItem.date = date
-            newItem.item = text
+            newItem.title = text
             realm.add(newItem)
             try! realm.commitWrite()
             

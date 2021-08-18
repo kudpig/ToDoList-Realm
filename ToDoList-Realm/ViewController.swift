@@ -20,7 +20,7 @@ import RealmSwift
  */
 
 class ToDoListItem: Object {
-    @objc dynamic var item: String = ""
+    @objc dynamic var title: String = ""
     @objc dynamic var date: Date = Date()
 }
 
@@ -55,7 +55,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = data[indexPath.row].item
+        cell.textLabel?.text = data[indexPath.row].title
         return cell
     }
     
@@ -74,7 +74,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         vc.deletionHandler = { [weak self] in
             self?.refresh()
         }
-        vc.title = item.item
+        vc.title = item.title
         vc.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(vc, animated: true)
     }

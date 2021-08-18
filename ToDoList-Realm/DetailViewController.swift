@@ -11,7 +11,6 @@ import RealmSwift
 class DetailViewController: UIViewController {
     
     private let realm = try! Realm()
-
     public var item: ToDoListItem?
     public var deletionHandler: ( () -> Void )?
     
@@ -26,10 +25,8 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         itemLabel.text = item?.title
         dateLabel.text = DetailViewController.dateFormatter.string(from: item!.date)
-        
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .trash,
                                                             target: self,
                                                             action: #selector(didTapDelete))

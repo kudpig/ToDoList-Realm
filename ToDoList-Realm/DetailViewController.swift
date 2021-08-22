@@ -8,14 +8,14 @@
 import UIKit
 import RealmSwift
 
-class DetailViewController: UIViewController {
+final class DetailViewController: UIViewController {
     
     private let realm = try! Realm()
     public var item: ToDoListItem?
     public var deletionHandler: ( () -> Void )?
     
-    @IBOutlet weak var itemLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet private weak var itemLabel: UILabel!
+    @IBOutlet private weak var dateLabel: UILabel!
     
     static let dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()

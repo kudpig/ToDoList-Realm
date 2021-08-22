@@ -24,9 +24,9 @@ class ToDoListItem: Object {
     @objc dynamic var date: Date = Date()
 }
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
 
-    @IBOutlet weak var table: UITableView!
+    @IBOutlet private weak var table: UITableView!
     
     private let realm = try! Realm()
     private var data = [ToDoListItem]()
@@ -93,7 +93,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func refresh() {
-        data = realm.objects(ToDoListItem.self).map { $0 } // realm.objectsの中のToDoListItem.typeをmapで取り出して配列にして返している?
+        data = realm.objects(ToDoListItem.self).map { $0 } // realm.objectsの中のToDoListItem.typeをmapで取り出して配列にして返している
         table.reloadData()
     }
     

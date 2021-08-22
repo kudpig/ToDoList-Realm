@@ -8,10 +8,10 @@
 import UIKit
 import RealmSwift
 
-class EntryViewController: UIViewController {
+final class EntryViewController: UIViewController {
     
-    @IBOutlet weak var textField: UITextField!
-    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet private weak var textField: UITextField!
+    @IBOutlet private weak var datePicker: UIDatePicker!
     
     private let realm = try! Realm()
     public var completionHandler: ( () -> Void )?
@@ -27,7 +27,7 @@ class EntryViewController: UIViewController {
                                                             action: #selector(didTapSaveButton))
     }
     
-    @objc func didTapSaveButton() {
+    @objc private func didTapSaveButton() {
         if let text = textField.text, !text.isEmpty {
             let date = datePicker.date
             
